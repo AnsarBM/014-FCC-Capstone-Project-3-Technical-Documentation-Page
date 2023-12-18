@@ -1,0 +1,220 @@
+
+html{
+    font-family:Helvetica, sans-serif;
+    font-size:15px;
+    width:100vw;
+}
+
+
+/*Define variables of the colours to be used. We can easily change the color by changing the variable instead of individual elements*/
+:root{
+    --background-color-1:#7071E8;
+    --background-color-2:#C683D7;
+    --background-color-3:#ED9ED6;
+    --background-color-4:#FFC7C7;
+    --background-color-5:red;
+    --background-color-6:black;
+    --background-color-7:blue;
+    --background-color-8:green;
+    --background-color-9:white;
+    --background-color-10:#f2f1f1;
+    --color-1:grey;
+    --color-2:lightgrey;
+    --color-3:rgb(95, 168, 192);
+    --color-4:rgba(247, 120, 141, 0.743);
+}
+
+/*The document background color is set using the variables*/
+body{
+    background:linear-gradient(
+        90deg,
+        var(--background-color-4) 0%,
+        var(--background-color-3) 15%,
+        var(--background-color-4) 55%,
+        var(--background-color-2) 95%
+    );
+}
+
+
+/*This divides our entire page into two sections (two columns with single row). 
+One for navigation bar and the other for the main text*/
+
+main{
+    display:grid;
+    grid-template-columns:auto auto;
+    grid-template-rows:1fr;
+}
+
+/*The navigation bar section is set to start from border of order 1 and end at order 2*/
+
+.navigation-section{
+    grid-column:1 / 2 ;
+}
+
+/*The main text sections column is set to start from order 2 and ends at order 3
+while row starts from order 1 to order 2. Also we set the space around the whole document */
+
+.all-main-sections{  
+    grid-column:2 / 3 ;
+    grid-row:1 / 2;
+    padding:50px;                  
+}
+
+/*Here we add space below each main section*/
+.main-section{
+    padding-bottom: 20px;
+}
+
+/*Each heading with the class named heading is set to BOLD.*/
+.heading{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/*Style the images used in the document*/
+.img-element{
+    display:block;
+    margin:30px 0px 20px 0px;
+    border-radius:10px;
+    width:100%;
+}
+
+/*Style the image button photo used in section 5 item 11 <input type="image">*/
+#image{
+    display:block;
+    margin:10px 0px 5px 0px;
+    border-radius:10px;
+}
+
+
+
+/*Remove the underline from all links(anchor elements)inside the main sections and make 
+color BLUE as original color, RED when mouse hovers over it and GREEN when the link is visited*/
+a:link{
+    color:var(--background-color-7);
+    text-decoration:none;
+}
+
+a:hover{
+    color:var(--background-color-8);
+}
+
+a:visited{
+    color:var(--background-color-8);
+}
+
+/*Code inline of the main text*/
+.example_code{
+ font-weight: bold;
+}
+
+
+/*Style the boxes with code, results, note or warning inside*/
+.div-with-code, .div-with-results, .div-with-warning, .div-with-note{
+    background-color:var(--background-color-10);
+    width:auto;
+    border-radius:10px;
+    padding:5px 30px 30px 30px;
+    margin-bottom:20px;
+}
+
+.div-with-warning{
+    background-color:var(--color-4);
+}
+
+.div-with-note{
+    background-color:var(--color-3);
+}
+
+
+
+
+/*Style the subsections of the HTML Elements*/
+.element-section{
+    margin:5px 10px 45px 0px;
+}
+
+
+/*Style the text of the code used inside the boxes with code and results*/
+
+.div-with-code code, .div-with-results code{
+    font-weight:normal;
+}
+
+/*Style heading of the code,results or warning box*/
+.code-heading{
+    font-weight:bold;
+    font-size:1.5rem;
+}
+
+/*This highlights the code*/
+mark{
+    background-color: var(--color-2);
+}
+
+/*Style inner text of the code*/
+.text-inside-code{
+    padding-left:20px;
+}
+
+
+
+/*Style the table and their data*/
+
+table, th, td{
+    border: 1px solid var(--color-1);
+    padding: 5px;
+}
+
+
+/*Style the whole navigation bar section*/
+#navbar{
+    padding:50px 5px;
+    overflow-x:none;
+    overflow-y:scroll;
+    /*scrollbar-base-color:black;
+    scrollbar-arrow-color: orangered;*/
+}
+
+/*Each subsection of the navigation bar is provided a space of 30px around it*/
+#navbar div{
+    padding:30px;  
+}
+
+/*The navigation bar heading is customized*/
+#navbar .heading{
+    padding-left:30px;  
+}
+
+/*The navigation bar links(anchor elements): Remove the underline and the color is set to black instead of default blue*/
+#navbar .nav-link{
+    text-decoration:none;
+    color:var(--background-color-6);
+    font-weight:bold;
+}
+
+
+
+@media screen and (max-width: 680px)
+{
+    main{
+        display:block;
+    }
+
+    .navigation-section{
+        display:block;
+        text-align: left;
+        grid-column:1 / 2 ;
+        grid-row:1 / 2;
+    } 
+   
+    .all-main-sections{  
+        display:block;
+        text-align: justify;
+        grid-column:1 / 2 ;
+        grid-row:2 / 3;
+        padding:50px;                  
+    }
+    
+    
+}
